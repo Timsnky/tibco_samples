@@ -22,7 +22,13 @@
             <maxRows>100</maxRows>
             <emptyStrAsNil>false</emptyStrAsNil>
             <jdbcSharedConfig>/SharedResources/Connections/JDBC/JDBCLocalConnection.sharedjdbc</jdbcSharedConfig>
-            <statement>SELECT * FROM BOOKS</statement>
+            <statement>SELECT * FROM BOOKS WHERE YEAR &gt; ?</statement>
+            <Prepared_Param_DataType>
+                <parameter>
+                    <parameterName>YEAR</parameterName>
+                    <dataType>VARCHAR</dataType>
+                </parameter>
+            </Prepared_Param_DataType>
             <oraObjects/>
             <oraTables/>
             <QueryOutputCachedSchemaColumns>NAME</QueryOutputCachedSchemaColumns>
@@ -39,7 +45,11 @@
             <QueryOutputCachedSchemaStatus>OptionalElement</QueryOutputCachedSchemaStatus>
         </config>
         <pd:inputBindings>
-            <jdbcQueryActivityInput/>
+            <jdbcQueryActivityInput>
+                <YEAR>
+                    <xsl:value-of select="1994"/>
+                </YEAR>
+            </jdbcQueryActivityInput>
         </pd:inputBindings>
     </pd:activity>
     <pd:transition>
