@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource>
+    <name>JDBCTestConnection</name>
+    <resourceType>ae.shared.JDBCSharedResource</resourceType>
+    <config>
+        <driver>tibcosoftwareinc.jdbc.oracle.OracleDriver</driver>
+        <maxConnections>10</maxConnections>
+        <loginTimeout>0</loginTimeout>
+        <connectionType>JDBC</connectionType>
+        <UseSharedJndiConfig>false</UseSharedJndiConfig>
+        <location>jdbc:tibcosoftwareinc:oracle://172.28.220.7:1521;SID=TIBCODB</location>
+        <user>TIBCOEHF</user>
+        <password>#!HTu8SaqGMekeNyG1VbXhyHTTWVT3i8NeButFaog7M+Y=</password>
+    </config>
+</BWSharedResource>

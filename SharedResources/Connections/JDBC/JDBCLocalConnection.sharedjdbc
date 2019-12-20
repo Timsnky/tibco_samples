@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BWSharedResource>
+    <name>JDBCLocalConnection</name>
+    <resourceType>ae.shared.JDBCSharedResource</resourceType>
+    <config>
+        <driver>tibcosoftwareinc.jdbc.oracle.OracleDriver</driver>
+        <maxConnections>10</maxConnections>
+        <loginTimeout>0</loginTimeout>
+        <connectionType>JDBC</connectionType>
+        <UseSharedJndiConfig>false</UseSharedJndiConfig>
+        <location>jdbc:tibcosoftwareinc:oracle://localhost:1521;SID=ORCL</location>
+        <user>c##homestead</user>
+        <password>#!UQy79CspBhU4ZMQUf43XCGJ1dWupN10m</password>
+    </config>
+</BWSharedResource>
