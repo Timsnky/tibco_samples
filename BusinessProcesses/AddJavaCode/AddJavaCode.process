@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003">
+    <pd:name>BusinessProcesses/AddJavaCode/AddJavaCode.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startX>27</pd:startX>
+    <pd:startY>139</pd:startY>
+    <pd:returnBindings/>
+    <pd:endName>End</pd:endName>
+    <pd:endX>327</pd:endX>
+    <pd:endY>139</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1577101675344</pd:targetNamespace>
+    <pd:activity name="Java Code">
+        <pd:type>com.tibco.plugin.java.JavaActivity</pd:type>
+        <pd:resourceType>ae.javapalette.javaActivity</pd:resourceType>
+        <pd:x>183</pd:x>
+        <pd:y>139</pd:y>
+        <config>
+            <fileName>AddJavaCodeJavaCode</fileName>
+            <packageName>BusinessProcesses.AddJavaCode.AddJavaCode</packageName>
+            <fullsource>package BusinessProcesses.AddJavaCode.AddJavaCode;
+import java.util.*;
+import java.io.*;
+public class AddJavaCodeJavaCode{
+/****** START SET/GET METHOD, DO NOT MODIFY *****/
+	protected String name = "";
+	protected String greeting = "";
+	public String getname() {
+		return name;
+	}
+	public void setname(String val) {
+		name = val;
+	}
+	public String getgreeting() {
+		return greeting;
+	}
+	public void setgreeting(String val) {
+		greeting = val;
+	}
+/****** END SET/GET METHOD, DO NOT MODIFY *****/
+	public AddJavaCodeJavaCode() {
+	}
+	public void invoke() throws Exception {
+/* Available Variables: DO NOT MODIFY
+	In  : String name
+	Out : String greeting
+* Available Variables: DO NOT MODIFY *****/
+
+greeting = "Hell0, " + name + "!";}
+}
+</fullsource>
+            <inputData>
+                <row>
+                    <fieldName>name</fieldName>
+                    <fieldType>string</fieldType>
+                    <fieldRequired>optional</fieldRequired>
+                </row>
+            </inputData>
+            <outputData>
+                <row>
+                    <fieldName>greeting</fieldName>
+                    <fieldType>string</fieldType>
+                    <fieldRequired>optional</fieldRequired>
+                </row>
+            </outputData>
+            <byteCode>
+                <class>
+                    <name>AddJavaCodeJavaCode</name>
+                    <byteCode>yv66vgAAADQALgkACwAfCQALACAKAAwAIQgAIgcAIwoABQAhCAAkCgAFACUIACYKAAUAJwcAKAcAKQEABG5hbWUBABJMamF2YS9sYW5nL1N0cmluZzsBAAhncmVldGluZwEAB2dldG5hbWUBABQoKUxqYXZhL2xhbmcvU3RyaW5nOwEABENvZGUBAA9MaW5lTnVtYmVyVGFibGUBAAdzZXRuYW1lAQAVKExqYXZhL2xhbmcvU3RyaW5nOylWAQALZ2V0Z3JlZXRpbmcBAAtzZXRncmVldGluZwEABjxpbml0PgEAAygpVgEABmludm9rZQEACkV4Y2VwdGlvbnMHACoBAApTb3VyY2VGaWxlAQAYQWRkSmF2YUNvZGVKYXZhQ29kZS5qYXZhDAANAA4MAA8ADgwAGAAZAQAAAQAXamF2YS9sYW5nL1N0cmluZ0J1aWxkZXIBAAdIZWxsMCwgDAArACwBAAEhDAAtABEBAD1CdXNpbmVzc1Byb2Nlc3Nlcy9BZGRKYXZhQ29kZS9BZGRKYXZhQ29kZS9BZGRKYXZhQ29kZUphdmFDb2RlAQAQamF2YS9sYW5nL09iamVjdAEAE2phdmEvbGFuZy9FeGNlcHRpb24BAAZhcHBlbmQBAC0oTGphdmEvbGFuZy9TdHJpbmc7KUxqYXZhL2xhbmcvU3RyaW5nQnVpbGRlcjsBAAh0b1N0cmluZwAhAAsADAAAAAIABAANAA4AAAAEAA8ADgAAAAYAAQAQABEAAQASAAAAHQABAAEAAAAFKrQAAbAAAAABABMAAAAGAAEAAAAJAAEAFAAVAAEAEgAAACIAAgACAAAABiortQABsQAAAAEAEwAAAAoAAgAAAAwABQANAAEAFgARAAEAEgAAAB0AAQABAAAABSq0AAKwAAAAAQATAAAABgABAAAADwABABcAFQABABIAAAAiAAIAAgAAAAYqK7UAArEAAAABABMAAAAKAAIAAAASAAUAEwABABgAGQABABIAAAA1AAIAAQAAABEqtwADKhIEtQABKhIEtQACsQAAAAEAEwAAABIABAAAABUABAAGAAoABwAQABYAAQAaABkAAgASAAAAOAADAAEAAAAgKrsABVm3AAYSB7YACCq0AAG2AAgSCbYACLYACrUAArEAAAABABMAAAAGAAEAAAAdABsAAAAEAAEAHAABAB0AAAACAB4=</byteCode>
+                </class>
+            </byteCode>
+        </config>
+        <pd:inputBindings>
+            <javaCodeActivityInput>
+                <name>
+                    <xsl:value-of select="&quot;World&quot;"/>
+                </name>
+            </javaCodeActivityInput>
+        </pd:inputBindings>
+    </pd:activity>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>Java Code</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+    <pd:transition>
+        <pd:from>Java Code</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>
