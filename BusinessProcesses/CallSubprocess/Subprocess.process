@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pd:ProcessDefinition xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <pd:name>BusinessProcesses/CallSubprocess/Subprocess.process</pd:name>
+    <pd:startName>Start</pd:startName>
+    <pd:startType>
+        <xsd:element name="SubprocessRequest">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="Name" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+    </pd:startType>
+    <pd:startX>33</pd:startX>
+    <pd:startY>141</pd:startY>
+    <pd:returnBindings>
+        <SubprocessResponse>
+            <Greeting>
+                <xsl:value-of select="concat(&quot;Hello, &quot;, $Start/SubprocessRequest/Name, &quot;! How are you doing?&quot;)"/>
+            </Greeting>
+        </SubprocessResponse>
+    </pd:returnBindings>
+    <pd:endName>End</pd:endName>
+    <pd:endType>
+        <xsd:element name="SubprocessResponse">
+            <xsd:complexType>
+                <xsd:sequence>
+                    <xsd:element name="Greeting" type="xsd:string"/>
+                </xsd:sequence>
+            </xsd:complexType>
+        </xsd:element>
+    </pd:endType>
+    <pd:endX>331</pd:endX>
+    <pd:endY>142</pd:endY>
+    <pd:errorSchemas/>
+    <pd:processVariables/>
+    <pd:targetNamespace>http://xmlns.example.com/1577093696162</pd:targetNamespace>
+    <pd:transition>
+        <pd:from>Start</pd:from>
+        <pd:to>End</pd:to>
+        <pd:lineType>Default</pd:lineType>
+        <pd:lineColor>-16777216</pd:lineColor>
+        <pd:conditionType>always</pd:conditionType>
+    </pd:transition>
+</pd:ProcessDefinition>
